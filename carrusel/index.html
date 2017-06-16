@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Carrusel</title>
+<meta charset="utf-8">
+<meta name="autor" content="Mayra Gaibor Grupo # 2">
+
+<h1><b> <center>LUGARES MAS BELLOS DEL MUNDO</center></b> </h1>
+
+</head>
+
+<body > 
+<br>
+<br>
+
+  <center><table class="centrada" border=2  ></center>
+  <tr>
+  <td colspan= "2" align="center" width="50%" height="280">
+  <img src="imagenes/1.jpg" name="Carrusel" height="300"></td>
+  </tr>
+  <tr>
+  <td align ="center"><button onClick="anterior()" id="boton_1" ><<< Anterior</button></td>
+  <td align ="center"><button onClick="siguiente()" id="boton_2" >Siguiente >>></button></td>
+  </tr>
+  </table>
+
+</body>
+</html>
+<script>
+  // Declaración de variables.
+    var Fotos; // Lugar donde se almacenara la ruta de la imagen.
+    var V_max; // Longitud máxima del vector "Fotos".
+    var aux;   // Auxiliar para configuración.
+    var aux_2; // Auxiliar para programación.
+  // Inicio de variables.
+    Fotos = new Array(); // Crea el vector para las fotos.
+    aux_2 = 0; // Inicia la variable auxiliar de programación con valor 0.
+  // Rutas de imagenes.
+    Fotos [0] = "imagenes/1.jpg"  
+    Fotos [1] = "imagenes/2.jpg" 
+    Fotos [2] = "imagenes/3.jpg" 
+    Fotos [3] = "imagenes/4.jpg" 
+    Fotos [4] = "imagenes/5.jpg" 
+    Fotos [5] = "imagenes/6.jpg" 
+    Fotos [6] = "imagenes/7.jpg" 
+    Fotos [7] = "imagenes/8.jpg" 
+    Fotos [8] = "imagenes/9.jpg" 
+    
+    
+    V_max = Fotos.length; // Obtiene la longitud del vector.
+    V_max = V_max-1; // Diminuye uno su valor dado que V_max coge un valor a más.
+// Fin de la configuración de diapositivas.
+// Inicio de la programación de diapositivas.
+  // Pasar a la siguiente imagen.
+    function siguiente () {
+      
+      if (aux_2 == V_max){      
+        aux_2 = 0;      
+      }
+      else{
+        aux_2 = aux_2+1;
+      }
+      document.images.Carrusel.src = Fotos[aux_2];
+    }
+  // Pasar a la siguiente imagen.
+    function anterior () {
+      
+      if (aux_2 == 0){      
+        aux_2 = V_max;      
+      }
+      else{
+        aux_2 = aux_2-1;
+      }
+      document.images.Carrusel.src = Fotos[aux_2];
+    }
+</script>
